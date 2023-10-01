@@ -43,7 +43,19 @@ $(function () {
   
   defineTimeBlock()
  
+  function readStoredEvents() {
+    var savedData = JSON.parse(localStorage.getItem('savedData')) || {}
 
+    // Loop through each time block
+    $('.time-block').each(function () {
+      var blockId = $(this).attr('id')
+      var userInput = savedData[blockId]
+
+      // Find the textarea within the time block and set its value
+      $(this).find('textarea').val(userInput)
+    })
+}
+readStoredEvents()
 })
 
 function displayTime() {
