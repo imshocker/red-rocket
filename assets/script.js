@@ -32,11 +32,11 @@ $(function () {
       var blockHour = parseInt(blockId)   // Convert the hour to an integer
   
       if (blockHour < currentHour) {
-        $(this).removeClass('present future').addClass('past')
+        $(this).addClass('past')
       } else if (blockHour === currentHour) {
-        $(this).removeClass('past future').addClass('present')
+        $(this).addClass('present')
       } else {
-        $(this).removeClass('past present').addClass('future')
+        $(this).addClass('future')
       }
     })
   }
